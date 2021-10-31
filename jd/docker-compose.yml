@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  qinglong:
+    restart: always
+    image: whyour/qinglong:latest
+    container_name: qinglong
+    hostname: qinglong
+    environment:
+      - ENABLE_HANGUP=true
+      - ENABLE_WEB_PANEL=true
+    volumes:
+      - ./ql/config:/ql/config
+      - ./ql/log:/ql/log
+      - ./ql/db:/ql/db
+      - ./ql/scripts:/ql/scripts
+      - ./ql/repo:/ql/repo
+    ports:
+      - "5700:5700"
