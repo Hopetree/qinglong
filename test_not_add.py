@@ -4,7 +4,7 @@
 # @Time  : 2021/10/31
 # @Desc  :
 # cron=10 9,18 * * *
-# new Env('repo 测试1');
+# new Env('repo 测试不添加');
 
 import os
 from common.common import test_common
