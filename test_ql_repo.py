@@ -7,6 +7,9 @@
 # new Env('repo 测试1');
 
 import os
+from utils.common import test_common
+
+test_common()
 
 envs = os.environ
 for k, v in envs.items():
