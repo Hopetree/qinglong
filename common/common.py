@@ -5,4 +5,4 @@
 # @Desc  :
 
 def test_common():
-    print('import utils.common')
+    print('import common.common')
