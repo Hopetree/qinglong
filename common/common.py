@@ -15,10 +15,10 @@ sys.path.append(root_path)
 def send_msg(title, content):
     print("【{}】: {}".format(title, content))
     try:
-        if os.path.isfile(os.path.join(root_path, 'sendNotify.py')):
-            from sendNotify import send
-        elif os.path.isfile(os.path.join(root_path, 'notify.py')):
+        if os.path.isfile(os.path.join(root_path, 'notify.py')):
             from notify import send
+        elif os.path.isfile(os.path.join(root_path, 'sendNotify.py')):
+            from sendNotify import send
         send(title, content)
     except ModuleNotFoundError:
         print('[通知功能]：无法获取消息通知脚本，不发送消息')
