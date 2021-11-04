@@ -13,7 +13,13 @@ sys.path.append(root_path)
 
 
 def send_msg(title, content):
-    print("【{}】: {}".format(title, content))
+    """
+    调用青龙或者jd签到的发送信息脚本推送消息
+    :param title: 信息标题
+    :param content: 信息内容
+    :return:
+    """
+    print("【{}】\n{}".format(title, content))
     try:
         if os.path.isfile(os.path.join(root_path, 'notify.py')):
             from notify import send
@@ -26,5 +32,20 @@ def send_msg(title, content):
         print('[通知功能]：其他错误：%s' % e)
 
 
+def hidden_key(key):
+    """
+    隐藏信息，将一个字符串的中间部分替换成*
+    :param key:
+    :return:
+    """
+    long = len(key)
+    if long < 3:
+        return key
+    else:
+        cut_num = long // 3
+        return key[0:cut_num] + '***' + key[0 - cut_num:]
+
+
 if __name__ == '__main__':
     send_msg('title', 'content')
+    print(hidden_key('24142441uuuyy'))
