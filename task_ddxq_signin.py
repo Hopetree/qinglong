@@ -75,7 +75,7 @@ class DDXQ:
                 point_money,
                 expire_point_display)
         else:
-            msg = '\ncookie:{}\n签到失败'.format(self.hidden_ck)
+            msg = '\ncookie:{}\n签到失败 {}'.format(self.hidden_ck, resp)
         return msg
 
 
