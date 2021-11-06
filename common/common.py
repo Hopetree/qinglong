@@ -3,11 +3,14 @@
 """
 提供一些通用的方法和类
 """
-
 import os
 import sys
 
-from myNotify import send
+cur_path = os.path.abspath(os.path.dirname(__file__))
+root_path = os.path.split(cur_path)[0]
+sys.path.append(root_path)
+
+from common.myNotify import send
 
 
 def send_msg(title, content):
